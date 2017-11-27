@@ -1,4 +1,4 @@
-# bioinformatics Tool
+# bioinformatics Tools
 Homework to "Bioinformatics algorithms" course.
 
 This project provides basic tools to work with biological data.
