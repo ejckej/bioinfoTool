@@ -39,10 +39,10 @@ public class Main {
     public static void main(String[] args) {
         try {
 
-            File file = new File("intpt.fasta");
-            Sequence[] map = getData(file);
-            seq1 = map[0];
-            seq2 = map[1];
+//            File file = new File("intpt.fasta");
+//            Sequence[] map = getData(file);
+//            seq1 = map[0];
+//            seq2 = map[1];
             
             String uniprotID1 = "P69905";
             String uniprotID2 = "P68871";
