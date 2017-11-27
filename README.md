@@ -1,5 +1,5 @@
-# bioinformatics Tools
-Homework to "Bioinformatics algorithms" course.
+# Bioinformatics Tools
+<i>Homework to "Bioinformatics algorithms" course.</i>
 
 This project provides basic tools to work with biological data.
 It uses BioJava - http://biojava.org/. 
