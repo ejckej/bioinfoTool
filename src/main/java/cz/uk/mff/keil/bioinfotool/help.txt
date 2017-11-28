@@ -1,0 +1,16 @@
+
+ BIOINFORMATIC TOOLBOX USER MANUAL
+-----------------------------------
+There are several options to choose
+from. Thease are:
+ 1
+ 2
+ 3
+
+To execute the task just choose the
+file(s) from your computer and than
+type one of the numbers. The output
+goes right to the console.
+
+Enyoy  using  this tool, hope it is  
+usefull...

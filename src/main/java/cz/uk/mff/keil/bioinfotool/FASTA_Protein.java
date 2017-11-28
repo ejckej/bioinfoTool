@@ -1,15 +1,10 @@
 package cz.uk.mff.keil.bioinfotool;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.LinkedHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
 import org.biojava.nbio.core.sequence.ProteinSequence;
 import org.biojava.nbio.core.sequence.compound.AminoAcidCompound;
 import org.biojava.nbio.core.sequence.compound.AminoAcidCompoundSet;
@@ -23,39 +18,43 @@ import org.biojava.nbio.core.util.InputStreamProvider;
  *
  * @author Jan Keil
  */
-public class Main {
+public class FASTA_Protein {
 
-    //private static Sequence seq1, seq2;
+    private File file;
+    private int type;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) { 
-        writeFileToConsole("./help.txt");
-        EditDistance.ed();
+    public FASTA_Protein() {
+
     }
 
-    private static void writeFileToConsole(String path){
-        try {
-            BufferedReader in = new BufferedReader(new FileReader(path));
-            String s;
-            while((s = in.readLine()) != null){
-                System.out.println(s);
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public FASTA_Protein(File file, int type) {
+        this.file = file;
+        this.type = type;
     }
     
-    public static Sequence[] getData(File file) throws IOException {
-
-        if (!file.exists()) {
+    private void check(){
+         if (!file.exists()) {
             System.err.println("File does not exist.");
             System.exit(1);
         }
+         
+        LinkedHashMap<String, Sequence> map;
+        switch (type) {
+            case 1:
+                //map = getProteinData(file);
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                break;
+        }
+    }
 
+    private LinkedHashMap<String, ProteinSequence> getProteinData(File file) throws IOException {
+        //check();
+        
         InputStreamProvider isp = new InputStreamProvider();
         InputStream inStream = isp.getInputStream(file);
 
@@ -65,21 +64,15 @@ public class Main {
                 new ProteinSequenceCreator(AminoAcidCompoundSet.getAminoAcidCompoundSet()));
 
         LinkedHashMap<String, ProteinSequence> b;
-        Sequence[] secs = new Sequence[2];
-        
+
         int nrSeq = 0;
 
-        while ((b = fastaReader.process(4)) != null) {
+        while ((b = fastaReader.process(10)) != null) {
             for (String key : b.keySet()) {
                 nrSeq++;
                 System.out.println(nrSeq + " : " + key + " " + b.get(key));
-                secs[nrSeq-1] = b.get(key);
             }
         }
-        if (nrSeq != 2) {
-            System.err.println("Wrong sequence count...");
-            System.exit(2);
-        }
-        return secs;
+        return b;
     }
 }
