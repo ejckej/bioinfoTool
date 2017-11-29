@@ -42,9 +42,9 @@ public class EditDistance {
                     = Alignments.getPairwiseAligner(s1, s2, Alignments.PairwiseSequenceAlignerType.GLOBAL, penalty, matrix);
 
             SequencePair<ProteinSequence, AminoAcidCompound> pair = editDistance.getPair();
-
-            System.out.println(editDistance.getDistance());
+            
             System.out.println(pair.toString(60));
+            System.out.println("Edit distance = " + editDistance.getDistance());
 
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

@@ -1,16 +1,15 @@
 
- BIOINFORMATIC TOOLBOX USER MANUAL
------------------------------------
-There are several options to choose
-from. Thease are:
- 1
- 2
- 3
+      BIOINFORMATIC TOOLBOX USER MANUAL
+---------------------------------------------
+There are several options to choose from.
+Thease are:
 
-To execute the task just choose the
-file(s) from your computer and than
-type one of the numbers. The output
-goes right to the console.
+ 1) parse FASTA file 
+    (followed by other options)
+ 2) Align 2 seqences and compute edit distance
+ 3) 
 
-Enyoy  using  this tool, hope it is  
-usefull...
+To execute the task, type one of the numbers.
+The output is writtten right to the console...
+
+Enyoy  using  this tool, hope it is usefull...
